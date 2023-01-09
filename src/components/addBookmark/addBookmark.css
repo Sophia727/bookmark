@@ -1,0 +1,25 @@
+.addBookmarkCard{
+    border: solid 1px whitesmoke;
+    width: 400px;
+    text-align: center;
+    padding: 20px 20px 40px 20px;
+    box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.2), 0 6px 20px 0 rgba(255, 255, 255, 0.19); ;
+
+}
+.addBookmarkCard>input {
+    margin: 15px;
+    border-radius: 15px;
+    border: none;
+    height: 2rem;
+    padding-left:15px;
+}
+
+.addBookmarkCard>button{
+    background-color: #444755;
+    color: whitesmoke;
+    border: whitesmoke solid 1px;
+    border-radius: 15px;
+    padding: 5px;
+    width: 4rem;
+    height: 2.1rem;
+}

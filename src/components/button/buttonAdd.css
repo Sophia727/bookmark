@@ -1,0 +1,11 @@
+.buttonAdd {
+    background-color: #383a43;
+    width:16rem;
+    height: 4rem;
+    font-size: 2rem;
+    border: gray 1px solid;
+    color: whitesmoke;
+    /* position: absolute; */
+    /* justify-content: center; */
+    
+}
