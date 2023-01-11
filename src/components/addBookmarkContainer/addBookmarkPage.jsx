@@ -3,6 +3,7 @@ import Bookmark from '../addBookmark/addBookmark';
 import BookmarksList from '../bookmarks/bookmarkslist';
 import ButtonAdd from '../button/buttonAdd';
 import "./addBookmarkPage.css";
+import isUrl from 'is-url';
 
 export default class AddBookmarkPage extends Component {
   constructor(props){
@@ -16,18 +17,21 @@ export default class AddBookmarkPage extends Component {
   handleSubmit = (e) => {
     e.preventDefault();
     let {ws_url, bookmarks } = this.state;
-    bookmarks.push(ws_url);
+    // let isUrl(ws_url) = true;
+    isUrl(ws_url) ? bookmarks.push(ws_url) : console.log('enter a valid URL');;
     this.setState({bookmarks:bookmarks, ws_url:""});
-    sessionStorage.setItem('bookmarks list',JSON.stringify(bookmarks));
-  }
-  componentDidMount(prevState){
-    let bms = sessionStorage.getItem("bookmarks list")
-      ? sessionStorage.getItem("bookmarks list")
+    localStorage.setItem('bookmarks list', JSON.stringify(bookmarks));
+}
+  componentDidMount(){
+    let bms = localStorage.getItem("bookmarks list")
+      ? localStorage.getItem("bookmarks list")
       : [];
-    this.setState({ todos: JSON.parse(bms) });
+      this.setState({bookmarks: JSON.parse(bms) });
   }
+
+  // 
   componentDidUpdate(prevState){
-    let bms = sessionStorage.getItem('bookmarks list') ? sessionStorage.getItem('bookmarks list') 
+    let bms = localStorage.getItem('bookmarks list') ? localStorage.getItem('bookmarks list') 
     : [];
     if(prevState.bookmarks !== JSON.parse(bms)){
     console.log(prevState);
@@ -48,7 +52,13 @@ export default class AddBookmarkPage extends Component {
             <input type='text' className='input' name='addBm'
             onChange={(e)=>{
             // try {
-              this.setState({ws_url: e.target.value});
+
+              // if (e.target.value = URL()) {
+                this.setState({ws_url: e.target.value});
+              // } else{
+              //   alert('please enter a valid link');
+              // };
+              
               // console.log(e.target.value);
             // } catch (error) {
             //   console.log(error);
@@ -56,7 +66,7 @@ export default class AddBookmarkPage extends Component {
             }}
             value={ws_url}
             />
-            <button type='submit'>Add</button>
+            <button className='submit_btn' type='submit'>Add</button>
             </form>
         </div>
         {/* <Bookmark handleSubmit={handleSubmit} ws_url={ws_url}/> */}

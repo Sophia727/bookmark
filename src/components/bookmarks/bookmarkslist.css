@@ -1,3 +1,8 @@
-.bookmark_list{
-    
+.bookmark_list::content{
+    color:white;
+}
+.fa-bookmark{
+    color:brown;
+    position: relative;
+    top: -25px;
 }

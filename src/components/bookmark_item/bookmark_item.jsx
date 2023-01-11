@@ -7,7 +7,7 @@ export default class Bookmark_item extends Component {
     return (     
         <li className='bmItem_li' >
         {/* onClick redirect?  is it needed? */}
-        <h2><a href={children}>{children}</a></h2>
+        <h2><a className='bm_link' href={children}>{children}</a></h2>
         </li>
     )
   }

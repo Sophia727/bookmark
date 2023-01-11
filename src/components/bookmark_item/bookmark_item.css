@@ -1,20 +1,18 @@
 .bmItem_li{
-    list-style: none;
-    height: 5rem;
-    width: 10rem;
+    height: 4rem;
+    width: 12.5rem;
     border:solid 2px grey;
     overflow:hidden;
     font-size: smaller;
     display: inline-block;
     margin-left: 10px;
     padding: 5px;
-    align-items: center;
-    align-self: center;
-    color:red;
-    backgroud-color:white;
+    flex-direction: row;
 
 }
-.bmItem_li a:href{
-    color:red;
+
+.bm_link{
+    color:whitesmoke;
     text-decoration: none;
+    display: flex;
 }
