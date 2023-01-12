@@ -1,20 +1,50 @@
+.addBookmarkCard>form{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-content: space-around !important;
+    width: 400px;
+
+}
+.addBookmarkCard{
+    position: fixed;
+}
+.input_group{
+    display: flex;
+    flex-direction: column;
+    align-content: space-around !important;
+    align-items: center;
+}
+
 .bm_container{
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 100px   ;
+    margin-top: 100px;
     position: relative;
     
 }
 .bm_container input{
     border-radius: 5px;
     border: none;
+    height: 2rem;
+    margin:5px;
+    display:grid;
+    width: 300px;
+
 }
+.bm_container>label{
+    margin-top: 5px;
+}
+
 .submit_btn{
-    background-color: whitesmoke;
-    border: none;
+    background-color: #383a43;
+    border: 1px whitesmoke solid;
+    height: 2.15rem;
     border-radius: 5px;
     margin: 15px;
-    width: 4rem;
+    width: 4.5em;
     font-size: 15px;
+    color:whitesmoke;
+    align-self: center;
 }

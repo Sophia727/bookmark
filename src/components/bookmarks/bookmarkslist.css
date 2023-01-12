@@ -1,8 +1,7 @@
-.bookmark_list::content{
-    color:white;
-}
-.fa-bookmark{
-    color:brown;
-    position: relative;
-    top: -25px;
+
+.bookmark_list ul{
+    display: flex;
+    flex-direction: row;
+    overflow-x: scroll;
+    width:max-content;
 }

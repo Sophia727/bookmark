@@ -11,16 +11,17 @@ export default class AddBookmarkPage extends Component {
     this.state = {
       ws_url : "",
       bookmarks: [],
+      label: "",
     }
   } 
 
   handleSubmit = (e) => {
     e.preventDefault();
-    let {ws_url, bookmarks } = this.state;
+    let {ws_url, bookmarks, label } = this.state;
     // let isUrl(ws_url) = true;
-    isUrl(ws_url) ? bookmarks.push(ws_url) : console.log('enter a valid URL');;
-    this.setState({bookmarks:bookmarks, ws_url:""});
-    localStorage.setItem('bookmarks list', JSON.stringify(bookmarks));
+    isUrl(ws_url) ? bookmarks.push([label, ws_url]) : alert('Please enter a valid URL');
+    this.setState({bookmarks:bookmarks, ws_url:"", label:""});
+    localStorage.setItem('bookmarks list', JSON.stringify(bookmarks, label));
 }
   componentDidMount(){
     let bms = localStorage.getItem("bookmarks list")
@@ -39,37 +40,37 @@ export default class AddBookmarkPage extends Component {
   }
 
   render() {
-    let {bookmarks, ws_url} = this.state;
+    let {bookmarks, ws_url, label} = this.state;
     return (
       <>
-      <BookmarksList bookmarks={bookmarks}/>
+      <BookmarksList bookmarks={bookmarks} label={label}/>
       <div className='bm_container'>
-        <ButtonAdd/>
+        {/* <ButtonAdd/> */}
         <div className='addBookmarkCard'>
             <h2>Add Bookmark</h2>
             <form onSubmit={this.handleSubmit}>
-            <legend for="addBm">Enter Website URL</legend>
-            <input type='text' className='input' name='addBm'
-            onChange={(e)=>{
-            // try {
-
-              // if (e.target.value = URL()) {
-                this.setState({ws_url: e.target.value});
-              // } else{
-              //   alert('please enter a valid link');
-              // };
-              
-              // console.log(e.target.value);
-            // } catch (error) {
-            //   console.log(error);
-            // } 
-            }}
-            value={ws_url}
-            />
+            <div className='input_group'>
+              <legend for="addBm">Enter Website URL</legend>
+              <input type='text' className='input' name='addBm'
+              onChange={(e)=>{
+              this.setState({ws_url: e.target.value});
+              }}
+              value={ws_url}
+              />
+            </div>
+            <div className='input_group'>
+              <legend for="label">Add Label</legend>
+              <input type='text' className='input' name='label'
+              onChange={(e)=>{
+              this.setState({label: e.target.value});
+              }}
+              value={label}
+              />
+            </div>
+            
             <button className='submit_btn' type='submit'>Add</button>
             </form>
         </div>
-        {/* <Bookmark handleSubmit={handleSubmit} ws_url={ws_url}/> */}
       </div>
       </>
       

@@ -1,18 +1,36 @@
 .bmItem_li{
-    height: 4rem;
+    height: 5rem;
     width: 12.5rem;
     border:solid 2px grey;
+    border-radius: 5px;
     overflow:hidden;
-    font-size: smaller;
     display: inline-block;
     margin-left: 10px;
     padding: 5px;
     flex-direction: row;
-
+}
+.fa-bookmark{
+    color:brown;
+    position: relative;
+    bottom: 6px;
+}
+.page_name{
+    font-weight: 700;
+    position: relative;
+    bottom: 10px;
+}
+.bmItem_li>h2{
+    font-size: 16px;
+    /* padding: 5px; */
+    margin-top: 10px;
 }
 
 .bm_link{
     color:whitesmoke;
     text-decoration: none;
     display: flex;
+    font-size: 14px;
+    position: relative;
+    bottom: 20px;
+    overflow: auto;
 }
