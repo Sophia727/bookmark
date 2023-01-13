@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/Sophia727/bookmarks/static/css/main.d2f3e3e1.css",
+    "main.js": "/Sophia727/bookmarks/static/js/main.b2f9e0e3.js",
+    "index.html": "/Sophia727/bookmarks/index.html",
+    "main.d2f3e3e1.css.map": "/Sophia727/bookmarks/static/css/main.d2f3e3e1.css.map",
+    "main.b2f9e0e3.js.map": "/Sophia727/bookmarks/static/js/main.b2f9e0e3.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d2f3e3e1.css",
+    "static/js/main.b2f9e0e3.js"
+  ]
+}
