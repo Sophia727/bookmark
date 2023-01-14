@@ -13,9 +13,7 @@ export default class BookmarksList extends Component {
         <ul>
         {bookmarks.map((element ,index)=> {
             return (
-              <Bookmark_item key={index} id={index} className="bm_item">
-              <i class="fa-solid fa-bookmark"></i>
-
+              <Bookmark_item key={index} id={index} className="bm_item" >
               {element}
             </Bookmark_item>
             )
