@@ -2,6 +2,7 @@
 .bookmark_list ul{
     display: flex;
     flex-direction: row;
-    overflow-x: scroll;
+    list-style: none;
+    overflow-x: scroll; 
     width:max-content;
 }

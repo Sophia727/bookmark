@@ -66,7 +66,7 @@ export default class AddBookmarkPage extends Component {
               this.setState({label: e.target.value});
               }}
               value={label}
-              />
+              required/>
             </div>
             
             <button className='submit_btn' type='submit'>Add</button>
